@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le génie — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    window.__ENV__ = {
+      SUPABASE_URL: 'https://YOUR_PROJECT_REF.supabase.co',
+      SUPABASE_ANON_KEY: 'YOUR_PUBLIC_ANON_KEY'
+    };
+  </script>
+  <script src="supabase-config.js"></script>
+  <script src="dashboard.js" defer></script>
+</head>
+<body class="auth-body">
+  <main class="auth-shell">
+    <div class="auth-card dashboard-card">
+      <div class="auth-header">
+        <p class="eyebrow eyebrow-soft">Le génie</p>
+        <h1 id="welcome-text">Dashboard</h1>
+      </div>
+
+      <p class="dashboard-user">Signed in as <strong id="user-email">user</strong></p>
+      <div id="dashboard-status" class="dashboard-status" aria-live="polite"></div>
+      <button id="logout-button" type="button" class="send-button">LOG OUT</button>
+    </div>
+  </main>
+</body>
+</html>
