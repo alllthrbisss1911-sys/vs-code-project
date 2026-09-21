@@ -56,46 +56,67 @@ h1 em, h2 em { font-family: 'Space Grotesk', sans-serif; font-weight: 400; lette
 .section-label { color: var(--lime); }
 .about-content { grid-column: 2 / 4; }
 h2 { font-size: clamp(3rem, 7.5vw, 8.5rem); line-height: .88; letter-spacing: -.065em; font-weight: 500; margin: 0; }
-.about h2 { max-width: 980px; }
+.about h2 { max-width: 1040px; font-size: clamp(4.1rem, 7.2vw, 8.8rem); letter-spacing: -.08em; }
 .about h2 span { color: #696960; }
 .about-intro { margin-bottom: 42px; }
 .eyebrow-soft { color: var(--muted); margin-bottom: 18px; }
 .highlight-phrase { color: var(--paper); }
 .accent-text { color: var(--lime); }
-.about-details { display: grid; grid-template-columns: 1.15fr 1.4fr; gap: 2rem 3rem; align-items: start; max-width: 1000px; }
-.large-copy { max-width: 670px; font-size: clamp(1.05rem, 1.3vw, 1.5rem); line-height: 1.7; color: #d0d0c7; margin: 0; }
+.about-details { display: grid; grid-template-columns: 1.05fr 1.5fr; gap: 2rem 3rem; align-items: start; max-width: 1030px; }
+.large-copy { max-width: 610px; font-size: clamp(1.08rem, 1.45vw, 1.55rem); line-height: 1.7; color: #d0d0c7; margin: 0; }
 .brand-line {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1rem;
+  gap: 0.8rem 0.9rem;
   margin-top: 1.5rem;
-  font: 500 0.78rem/1.5 var(--mono);
-  letter-spacing: .08em;
+  font: 500 0.72rem/1.5 var(--mono);
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--paper);
 }
 .brand-line span {
   display: inline-block;
-  padding: 0.45rem 0.7rem;
+  padding: 0.48rem 0.72rem;
   border: 1px solid var(--line);
   background: rgba(255,255,255,0.015);
+  transition: border-color .25s ease, transform .25s ease;
+}
+.brand-line span:hover {
+  border-color: rgba(199, 255, 61, 0.5);
+  transform: translateY(-2px);
 }
 .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 2rem; }
 .fact-card {
+  position: relative;
   background: rgba(255,255,255,0.015);
   border: 1px solid var(--line);
-  padding: 1.1rem 1rem 1rem;
-  min-height: 150px;
+  padding: 1.15rem 1rem 1rem;
+  min-height: 168px;
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
   justify-content: space-between;
-  transition: transform .28s ease, border-color .28s ease, background .28s ease;
+  transition: transform .28s ease, border-color .28s ease, background .28s ease, box-shadow .28s ease;
+}
+.fact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(199,255,61,0.9), rgba(199,255,61,0));
+  opacity: 0;
+  transition: opacity .25s ease;
 }
 .fact-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(199, 255, 61, 0.45);
-  background: rgba(199, 255, 61, 0.03);
+  transform: translateY(-5px);
+  border-color: rgba(199, 255, 61, 0.5);
+  background: rgba(199, 255, 61, 0.025);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+.fact-card:hover::before {
+  opacity: 1;
 }
 .fact-number {
   color: var(--lime);
@@ -136,8 +157,15 @@ h2 { font-size: clamp(3rem, 7.5vw, 8.5rem); line-height: .88; letter-spacing: -.
 .project-meta p, .year { color: var(--muted); font: 11px var(--mono); text-transform: uppercase; }
 .contact { min-height: 680px; align-content: center; }
 .contact-content { grid-column: 2; }
-.contact h2 { font-size: clamp(5rem, 11vw, 12rem); }
-.email-link { display: inline-flex; gap: 25px; color: var(--lime); border-bottom: 1px solid var(--lime); padding-bottom: 9px; margin-top: 70px; font-size: 17px; }
+.contact h2 { font-size: clamp(4rem, 8vw, 8rem); line-height: 0.92; letter-spacing: -.07em; }
+.contact-copy {
+  max-width: 560px;
+  margin: 2rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+.email-link { display: inline-flex; gap: 25px; color: var(--lime); border-bottom: 1px solid var(--lime); padding-bottom: 9px; margin-top: 42px; font-size: 17px; }
 .email-link span { transition: transform .3s; }
 .email-link:hover span { transform: translate(5px, -5px); }
 .contact-aside { color: var(--muted); align-self: end; padding-bottom: 10px; }
