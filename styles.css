@@ -1,16 +1,25 @@
 :root {
-  --ink: #141414;
-  --paper: #e8e7df;
-  --lime: #c9f060;
-  --muted: #8d8d84;
-  --line: rgba(232, 231, 223, .2);
+  --ink: #171716;
+  --paper: #f1efe7;
+  --lime: #b9d77c;
+  --lime-soft: rgba(185, 215, 124, 0.18);
+  --muted: #9b998f;
+  --line: rgba(241, 239, 231, .18);
   --display: 'Space Grotesk', sans-serif;
   --mono: 'DM Mono', monospace;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--ink); color: var(--paper); font-family: var(--display); overflow-x: hidden; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(185, 215, 124, 0.08), transparent 30%),
+    linear-gradient(180deg, #171716 0%, #1b1c1a 100%);
+  color: var(--paper);
+  font-family: var(--display);
+  overflow-x: hidden;
+}
 a { color: inherit; text-decoration: none; }
 .mono { font: 500 11px/1.4 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
 .page-grid { display: grid; grid-template-columns: minmax(170px, 1fr) minmax(0, 3.2fr) minmax(120px, .75fr); gap: 3vw; }
